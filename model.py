@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 
 gold_data='gold_data.xlsx'
 def load_data():
-    df = pd.read_excel(gold_data,usecols='A:C',header=0)  # Replace with your Excel file path
+    df = pd.read_excel(gold_data)  # Replace with your Excel file path
     return df
 
 df = load_data()
@@ -42,11 +42,11 @@ X_test_imputed = imputer.transform(X_test)
 rf_regressor = RandomForestRegressor(n_estimators=300, random_state=42)
 
 # Training the model on the training data with imputed features
-rf_regressor.fit(X_train_imputed.values, y_train.values)
+rf_regressor.fit(X_train_imputed, y_train)
 
 
 
-y_pred = rf_regressor.predict(X_test_imputed.values)
+y_pred = rf_regressor.predict(X_test_imputed)
 
 
 mse = mean_squared_error(y_test, y_pred)
