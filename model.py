@@ -36,17 +36,17 @@ imputer = SimpleImputer(strategy='mean')
 
 X_train_imputed = imputer.fit_transform(X_train)
 X_test_imputed = imputer.transform(X_test)
-X_train_imputed=X_train_imputed.values
+
 
 # Creating the Random Forest Regressor
 rf_regressor = RandomForestRegressor(n_estimators=300, random_state=42)
 
 # Training the model on the training data with imputed features
-rf_regressor.fit(X_train_imputed, y_train)
+rf_regressor.fit(X_train_imputed.values, y_train.values)
 
 
 
-y_pred = rf_regressor.predict(X_test_imputed)
+y_pred = rf_regressor.predict(X_test_imputed.values)
 
 
 mse = mean_squared_error(y_test, y_pred)
