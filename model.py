@@ -38,7 +38,7 @@ X_train_imputed = imputer.fit_transform(X_train)
 X_test_imputed = imputer.transform(X_test)
 
 # Creating the Random Forest Regressor
-rf_regressor = RandomForestRegressor(n_estimators=300, random_state=42,feature_names = ['24karat', '22karat'])
+rf_regressor = RandomForestRegressor(n_estimators=300, random_state=42)
 
 # Training the model on the training data with imputed features
 rf_regressor.fit(X_train_imputed, y_train)
