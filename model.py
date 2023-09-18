@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 
 gold_data='gold_data.xlsx'
 def load_data():
-    df = pd.read_excel(gold_data,usecols='A:C',header=0)  # Replace with your Excel file path
+    df = pd.read_excel(gold_data)  # Replace with your Excel file path
     return df
 
 df = load_data()
@@ -25,6 +25,8 @@ df.columns = df.columns.str.replace(' ','')
 X = df[['24karat','22karat']]  #  feature columns
 y = df['24karat']  # target column
 
+X=X.values
+y=y.values
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
