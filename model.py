@@ -36,6 +36,7 @@ imputer = SimpleImputer(strategy='mean')
 
 X_train_imputed = imputer.fit_transform(X_train)
 X_test_imputed = imputer.transform(X_test)
+X_train_imputed=X_train_imputed.values
 
 # Creating the Random Forest Regressor
 rf_regressor = RandomForestRegressor(n_estimators=300, random_state=42)
