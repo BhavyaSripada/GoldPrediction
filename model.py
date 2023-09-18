@@ -4,7 +4,6 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVR 
 import numpy as np
-import pickle
 
 
 from sklearn.ensemble import RandomForestRegressor
@@ -205,6 +204,7 @@ plt.legend()
 plt.title('Forecasted 24K Gold Prices for the Next 18 Months')
 plt.grid(True)
 plt.show()
+
 
 
 
