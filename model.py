@@ -12,7 +12,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 
 
-st.cache_data
+
 
 gold_data='gold_data.xlsx'
 def load_data():
