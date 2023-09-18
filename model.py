@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 
 gold_data='gold_data.xlsx'
 def load_data():
-    df = pd.read_excel(gold_data)  # Replace with your Excel file path
+    df = pd.read_excel(gold_data,usecols='A:C',header=0)  # Replace with your Excel file path
     return df
 
 df = load_data()
@@ -47,7 +47,7 @@ rf_regressor.fit(X_train_imputed, y_train)
 
 
 y_pred = rf_regressor.predict(X_test_imputed)
-y_pred=pd.dataframe(np.array(X).reshape(1,-1),columns=['24karat','22karat'])
+
 
 mse = mean_squared_error(y_test, y_pred)
 rmse = np.sqrt(mse)
