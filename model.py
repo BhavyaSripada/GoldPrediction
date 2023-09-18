@@ -42,7 +42,7 @@ X_test_imputed = imputer.transform(X_test)
 rf_regressor = RandomForestRegressor(n_estimators=300, random_state=42)
 
 # Training the model on the training data with imputed features
-rf_regressor.fit(X_train_imputed, y_train)
+rf_regressor.fit(X_train_imputed, y_train.values)
 
 
 
