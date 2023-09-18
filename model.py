@@ -13,10 +13,9 @@ import matplotlib.pyplot as plt
 
 
 
-
 gold_data='gold_data.xlsx'
 def load_data():
-    df = pd.read_excel(gold_data)  # Replace with your Excel file path
+    df = pd.read_excel(gold_data,usecols='A:C',header=0)  # Replace with your Excel file path
     return df
 
 df = load_data()
@@ -36,7 +35,6 @@ imputer = SimpleImputer(strategy='mean')
 
 X_train_imputed = imputer.fit_transform(X_train)
 X_test_imputed = imputer.transform(X_test)
-
 
 # Creating the Random Forest Regressor
 rf_regressor = RandomForestRegressor(n_estimators=300, random_state=42)
