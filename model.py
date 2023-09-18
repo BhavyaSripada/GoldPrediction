@@ -23,7 +23,7 @@ df = load_data()
 
 df.columns = df.columns.str.replace(' ','')
 
-X = df[['24karat','24karat']]  #  feature columns
+X = df[['24karat','22karat']]  #  feature columns
 y = df['24karat']  # target column
 
 
